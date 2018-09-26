@@ -10,10 +10,16 @@ public class TestStream {
 
         System.out.println(count);
 
-        var list = Stream.of(1,2,3,2,1)
+        var dropList = Stream.of(1,2,3,2,1)
                 .dropWhile(n -> n < 3)
                 .collect(Collectors.toList());
 
-        list.forEach(item -> System.out.println(item));
+        dropList.forEach(item -> System.out.println(item));
+
+        var takeList = Stream.of(1,2,3,2,1)
+            .takeWhile(n -> n < 3)
+            .collect(Collectors.toList());
+
+        takeList.forEach(item -> System.out.println(item));
     }
 }
