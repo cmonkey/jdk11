@@ -40,7 +40,7 @@ public class TestHttpClient {
         AtomicReference<String> json = new AtomicReference<>("");
         var httpResponse = httpClient.sendAsync(httpRequest, ofString())
                 .thenApply(HttpResponse::body)
-                .thenAccept(r -> json.set(r));
+                .thenAccept(json::set);
 
         httpResponse.join();
 
